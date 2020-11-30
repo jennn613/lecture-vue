@@ -1,6 +1,7 @@
 import FormView from '../views/FormView.js'
 import ResultView from '../views/ResultView.js'
 import SearchModel from '../models/SearchModel.js'
+import Tabview from '../views/TabView.js'
 const tag = '[MainController]'
 
 
@@ -11,7 +12,16 @@ export default {
         //on 메소드에 @submit을 받았을 떼 event(onSubmit) 호출해주기
         .on('@reset', e => this.onResetForm())
 
+        Tabview.setup(document.querySelector('#tabs'))
         ResultView.setup(document.querySelector('#search-result'))
+        this.selectedTab = '추천 검색어'
+        this.renderView()
+
+    },
+
+    renderView(){
+     Tabview.setActiveTab(this.selectedTab)
+     ResultView.hide()
     },
 
     search(query){
