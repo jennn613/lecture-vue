@@ -16,6 +16,11 @@ export default {
     return new Promise(res => {
       setTimeout(()=> {
         res(data)
+        //res를 data에 200ms 후 리턴
+         //history model.js에
+        // list() {
+        //   return Promise.resolve(this.data)
+        // } 함수가 있음.
       }, 200);
     })
   }
