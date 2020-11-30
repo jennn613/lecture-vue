@@ -36,6 +36,7 @@ FormView.bindEvents = function() {
     //onKeyup - 키를 눌렀다가 땠을 때 이벤트이다
     this.resetEl.addEventListener('click', e => this.onClickReset())
     //x 버튼 클릭시 onreset 함수 실행
+   
 }
 
 FormView.onKeyup = function(e) {
